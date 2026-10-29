@@ -1,0 +1,227 @@
+{
+ "task_id": "shop-checkout-coupon",
+ "goal": "Buy one Linen Tote Bag. Apply the coupon advertised in the site banner, then check out with name Ana Ruiz, address 12 Harbor St, city Lisbon.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:20+00:00",
+ "decisions": [
+  {
+   "observation_digest": "f9bc69e69933ea2a",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e31"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "e51153d93f8e6601",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e3"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "4fb1a28b0f693e02",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "GLASS10",
+      "submit": false,
+      "ref": "e7"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "9831a7af74fcd55e",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e8"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "1c476ff94f0ca7e0",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e9"
+     },
+     "reason": "script step 5"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "affebdce98a59e2a",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Ana Ruiz",
+      "submit": false,
+      "ref": "e4"
+     },
+     "reason": "script step 6"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "71bbb96f80eb5af1",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "12 Harbor St",
+      "submit": false,
+      "ref": "e5"
+     },
+     "reason": "script step 7"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "325b2539c68a11e5",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Lisbon",
+      "submit": false,
+      "ref": "e6"
+     },
+     "reason": "script step 8"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "a6cc59bd18f943af",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e7"
+     },
+     "reason": "script step 9"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "0f174e8780231b26",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 10"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

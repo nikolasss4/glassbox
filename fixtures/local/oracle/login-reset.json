@@ -1,0 +1,229 @@
+{
+ "task_id": "login-reset",
+ "goal": "Dave forgot his password. Reset it using his email dave@example.com, set the new password to Harbor-Light-88, then sign in as dave with the new password.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:18+00:00",
+ "decisions": [
+  {
+   "observation_digest": "36bbb70ee9f253b2",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e7"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "d162eb046a627741",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "dave@example.com",
+      "submit": false,
+      "ref": "e4"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "5144b95716caf38a",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e5"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "84ee85b0250a98bf",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e6"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "4067fa8c01d05af9",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Harbor-Light-88",
+      "submit": false,
+      "ref": "e4"
+     },
+     "reason": "script step 5"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "5628126c56d2f96d",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Harbor-Light-88",
+      "submit": false,
+      "ref": "e5"
+     },
+     "reason": "script step 6"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "8750e8457f7092f3",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e6"
+     },
+     "reason": "script step 7"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "8735e0e5e8fe4efe",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "dave",
+      "submit": false,
+      "ref": "e4"
+     },
+     "reason": "script step 8"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "c9549f7fbc7a648a",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Harbor-Light-88",
+      "submit": true,
+      "ref": "e5"
+     },
+     "reason": "script step 9"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "6f60372590528768",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 10"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

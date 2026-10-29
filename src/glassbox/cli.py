@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import sys
 import time
 from pathlib import Path
 from typing import Annotated, Any
@@ -14,7 +15,8 @@ from rich.console import Console
 from glassbox.config import DEFAULT_MODEL
 
 app = typer.Typer(add_completion=False, no_args_is_help=True, help=__doc__)
-console = Console()
+# Wide enough for the results table when output is piped (rich assumes 80 columns).
+console = Console(width=None if sys.stdout.isatty() else 140)
 
 
 @app.command()
@@ -129,6 +131,10 @@ def eval_(
     min_success: Annotated[
         float | None, typer.Option(help="Exit 1 if any agent's success rate is below this.")
     ] = None,
+    expect: Annotated[
+        Path | None,
+        typer.Option(help="Saved results JSON; exit 1 unless every task's pass/fail matches it."),
+    ] = None,
 ) -> None:
     """Run the eval suite and print a results table."""
     from glassbox.evals.report import markdown, per_task_markdown, summary_table
@@ -175,6 +181,16 @@ def eval_(
     console.print(f"[dim]results written to {out}/[/]")
     if min_success is not None and any(r.summary()["success_rate"] < min_success for r in reports):
         raise typer.Exit(1)
+    if expect is not None:
+        from glassbox.evals.runner import SuiteReport
+
+        want = SuiteReport.from_json(json.loads(expect.read_text()))
+        diffs = [d for r in reports for d in r.diff(want)]
+        for d in diffs:
+            console.print(f"[red]mismatch[/] {d}")
+        if diffs:
+            raise typer.Exit(1)
+        console.print(f"[green]outcomes match {expect}[/]")
 
 
 @app.command()

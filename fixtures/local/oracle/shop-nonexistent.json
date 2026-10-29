@@ -1,0 +1,53 @@
+{
+ "task_id": "shop-nonexistent",
+ "goal": "Add a Purple Ceramic Mug to the cart.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:18+00:00",
+ "decisions": [
+  {
+   "observation_digest": "f9bc69e69933ea2a",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "purple",
+      "submit": true,
+      "ref": "e4"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "bf484db60d0420ab",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": false,
+      "answer": "The shop has no Purple Ceramic Mug."
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

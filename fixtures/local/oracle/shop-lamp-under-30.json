@@ -1,0 +1,74 @@
+{
+ "task_id": "shop-lamp-under-30",
+ "goal": "Search the shop for 'lamp' and add the lamp that costs less than $30 to the cart.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:15+00:00",
+ "decisions": [
+  {
+   "observation_digest": "f9bc69e69933ea2a",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "lamp",
+      "submit": true,
+      "ref": "e4"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "2e5bbf8f2288f5f8",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e11"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "37f84547f3791e28",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

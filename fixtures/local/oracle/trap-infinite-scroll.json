@@ -1,0 +1,261 @@
+{
+ "task_id": "trap-infinite-scroll",
+ "goal": "In the inventory feed, mark item #37 as a favorite.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:31+00:00",
+ "decisions": [
+  {
+   "observation_digest": "9279f5fdd85a839c",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "7972749b0f23682a",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "dd87179fb9e473a4",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "7f13a5b8c15ec9de",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "7f13a5b8c15ec9de",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 5"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "826a7ec5346bbf64",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 6"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "543448753e31c494",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 7"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "543448753e31c494",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 8"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "9a4747dac7a67dcd",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 9"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "3fefe6ec6d489ed9",
+   "decision": {
+    "action": {
+     "name": "scroll",
+     "args": {
+      "direction": "down"
+     },
+     "reason": "script step 10"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "3fefe6ec6d489ed9",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e38"
+     },
+     "reason": "script step 11"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "2149ce57b8489e82",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 12"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

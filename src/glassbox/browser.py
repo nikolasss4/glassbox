@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlparse
@@ -37,8 +38,21 @@ class Observation:
 
     @property
     def digest(self) -> str:
-        """Stable hash of what the model saw; replay fixtures use it to detect drift."""
-        return hashlib.sha256(self.text.encode()).hexdigest()[:16]
+        """Hash of the page content the model saw; replay fixtures use it to detect drift.
+
+        The page origin is masked (the eval server binds a random port), and layout-derived
+        annotations (scroll extent, above/below viewport) are left out: they depend on font
+        metrics, which differ between a laptop and a Linux CI runner.
+        """
+        parts = urlparse(self.url)
+        content = self.text
+        if parts.scheme in ("http", "https"):
+            content = content.replace(f"{parts.scheme}://{parts.netloc}", "<origin>")
+        content = _LAYOUT_NOISE.sub("", content)
+        return hashlib.sha256(content.encode()).hexdigest()[:16]
+
+
+_LAYOUT_NOISE = re.compile(r"^Scroll: .*$| \((?:above|below) viewport\)", re.M)
 
 
 class BrowserSession:

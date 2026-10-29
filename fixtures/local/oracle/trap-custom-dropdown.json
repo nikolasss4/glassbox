@@ -1,0 +1,93 @@
+{
+ "task_id": "trap-custom-dropdown",
+ "goal": "Set the billing country to Portugal and save the preferences.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:25+00:00",
+ "decisions": [
+  {
+   "observation_digest": "20e28e19aa322401",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e2"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "15f0db52c579ed2a",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e24"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "f8badae23a04415a",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e3"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "d9828a4d0fbdae8b",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

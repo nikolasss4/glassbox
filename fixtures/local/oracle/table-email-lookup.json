@@ -1,0 +1,53 @@
+{
+ "task_id": "table-email-lookup",
+ "goal": "What is the email address of Kenji Sato in the people directory?",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:20+00:00",
+ "decisions": [
+  {
+   "observation_digest": "dbd3cae850b53b9a",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Kenji",
+      "submit": false,
+      "ref": "e1"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "3f392f7336e67fb8",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "kenji.sato@peopleco.example"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

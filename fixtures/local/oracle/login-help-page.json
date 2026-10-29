@@ -1,0 +1,118 @@
+{
+ "task_id": "login-help-page",
+ "goal": "Sign in as carol. Her password is listed on the site's help page.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:15+00:00",
+ "decisions": [
+  {
+   "observation_digest": "36bbb70ee9f253b2",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e3"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "ce4a82d680af3e1a",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e2"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "36bbb70ee9f253b2",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "carol",
+      "submit": false,
+      "ref": "e4"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "a52955961e90567f",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "maple-syrup-7",
+      "submit": true,
+      "ref": "e5"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "b3be7da87247483e",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 5"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

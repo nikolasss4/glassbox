@@ -1,0 +1,52 @@
+{
+ "task_id": "table-count-dept",
+ "goal": "How many people work in the Engineering department? Answer with a number.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:21+00:00",
+ "decisions": [
+  {
+   "observation_digest": "dbd3cae850b53b9a",
+   "decision": {
+    "action": {
+     "name": "select_option",
+     "args": {
+      "option": "Engineering",
+      "ref": "e2"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "41ba3aa565e94d68",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "7"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "task_id": "login-2fa",
+ "goal": "Sign in as bob (password: river-9). He uses two-factor authentication; his current code is shown on the authenticator page linked from the 2FA screen.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:16+00:00",
+ "decisions": [
+  {
+   "observation_digest": "36bbb70ee9f253b2",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "bob",
+      "submit": false,
+      "ref": "e4"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "7d51a6b849ef65da",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "river-9",
+      "submit": true,
+      "ref": "e5"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "ea000e35bce8f26d",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e4"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "6ff937346cb1c3d3",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e1"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "ea000e35bce8f26d",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "482915",
+      "submit": true,
+      "ref": "e5"
+     },
+     "reason": "script step 5"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "95d5562e97a068b6",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 6"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

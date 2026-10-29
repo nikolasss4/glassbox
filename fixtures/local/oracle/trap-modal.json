@@ -1,0 +1,93 @@
+{
+ "task_id": "trap-modal",
+ "goal": "Open the blog post titled 'Why tests matter'.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:26+00:00",
+ "decisions": [
+  {
+   "observation_digest": "d9b46e35cc63dd12",
+   "decision": {
+    "action": {
+     "name": "wait",
+     "args": {
+      "seconds": 1.5
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "7db7b210c5dea404",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e7"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "d9b46e35cc63dd12",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e3"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "56a6dfa758c1092e",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "task_id": "shop-discounted-price",
+ "goal": "What would one Mechanical Keyboard cost with the coupon GLASS10 applied? Answer with the order total in dollars, like $12.34.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:19+00:00",
+ "decisions": [
+  {
+   "observation_digest": "f9bc69e69933ea2a",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e35"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "22f4a4c88f339696",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e3"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "1e879faa0f7e66e1",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "GLASS10",
+      "submit": false,
+      "ref": "e7"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "90d5ac73e1900faa",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e8"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "3e33b14a16164cce",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "$75.60"
+     },
+     "reason": "script step 5"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

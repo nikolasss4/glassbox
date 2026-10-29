@@ -32,7 +32,8 @@ def summary_table(reports: list[SuiteReport]) -> Table:
         title=f"glassbox eval · suite={reports[0].suite} · {reports[0].summary()['tasks']} tasks"
     )
     for title, _, _ in _COLUMNS:
-        table.add_column(title, justify="left" if title == "Agent" else "right")
+        agent = title == "Agent"
+        table.add_column(title, justify="left" if agent else "right", no_wrap=agent)
     for r in reports:
         table.add_row(*_cells(r))
     return table

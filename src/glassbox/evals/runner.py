@@ -85,6 +85,17 @@ class SuiteReport:
             "p50_task_duration_s": statistics.median([t.duration_s for t in o]) if o else 0.0,
         }
 
+    def diff(self, other: SuiteReport) -> list[str]:
+        """Tasks whose pass/fail differs from another report (trial 0 of each task)."""
+        want = {o.task_id: o.success for o in other.outcomes if o.trial == 0}
+        got = {o.task_id: o.success for o in self.outcomes if o.trial == 0}
+        return [
+            f"{task}: expected {'pass' if want[task] else 'fail'}, got "
+            f"{'pass' if got.get(task) else 'fail' if task in got else 'missing'}"
+            for task in sorted(want)
+            if got.get(task) != want[task]
+        ]
+
     def to_json(self) -> dict[str, Any]:
         return {
             "provider": self.provider,

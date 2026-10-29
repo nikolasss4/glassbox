@@ -77,3 +77,15 @@ async def test_takeover_mid_step_skips_stale_action(sites: SiteServer, browser: 
     first = agent.steps[0]
     assert first.human_note == "I logged in myself"
     assert not first.result.ok and "human operator" in first.result.message
+
+
+def test_digest_ignores_layout_annotations() -> None:
+    from glassbox.browser import Observation
+
+    a = Observation("u", "t", 'Scroll: 0 of 455px\n[e1] button "Go" (below viewport)\n', 1)
+    b = Observation("u", "t", 'Scroll: 0 of 470px\n[e1] button "Go"\n', 1)
+    c = Observation("u", "t", 'Scroll: 0 of 455px\n[e1] button "Stop"\n', 1)
+    assert a.digest == b.digest != c.digest
+    d = Observation("http://127.0.0.1:5001/x", "t", "URL: http://127.0.0.1:5001/x\n", 0)
+    e = Observation("http://127.0.0.1:6002/x", "t", "URL: http://127.0.0.1:6002/x\n", 0)
+    assert d.digest == e.digest

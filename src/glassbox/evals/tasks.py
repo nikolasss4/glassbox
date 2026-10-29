@@ -519,7 +519,8 @@ TASKS: list[Task] = [
         goal="In the inventory feed, mark item #37 as a favorite.",
         start="/sites/traps/infinite.html",
         check=lambda c: c.store.get("traps:favorites") == [37],
-        oracle=[S("scroll", args={"direction": "down"})] * 8 + [click("Favorite item #37"), done()],
+        oracle=[S("scroll", args={"direction": "down"})] * 10
+        + [click("Favorite item #37"), done()],
         tags=["trap", "scroll"],
     ),
     Task(

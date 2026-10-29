@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run playwright install --with-deps chromium
+      - name: Lint
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+      - name: Type-check
+        run: uv run mypy
+      - name: Tests
+        run: uv run pytest -q
+      - name: Replay recorded agent runs against the mock sites (no API key)
+        # Each fixture set must reproduce its committed per-task outcomes exactly.
+        run: |
+          for dir in fixtures/local/*/; do
+            name=$(basename "$dir")
+            uv run glassbox eval --model "replay:${dir%/}" --expect "results/local__${name}.json" \
+              --out eval-out --runs-dir eval-out/runs
+          done
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: eval-traces
+          path: eval-out/
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build

@@ -1,0 +1,76 @@
+{
+ "task_id": "login-basic",
+ "goal": "Sign in to Acme Accounts as alice with the password sunflower-42.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:14+00:00",
+ "decisions": [
+  {
+   "observation_digest": "36bbb70ee9f253b2",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "alice",
+      "submit": false,
+      "ref": "e4"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "a733a22f276c7745",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "sunflower-42",
+      "submit": true,
+      "ref": "e5"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "d73d3ce23f60d962",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}

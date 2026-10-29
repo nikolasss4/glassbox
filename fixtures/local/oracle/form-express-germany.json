@@ -1,0 +1,316 @@
+{
+ "task_id": "form-express-germany",
+ "goal": "Send a parcel request with express delivery: name Lukas Weber, email lukas@weber.example, phone 555-300-4000, street Hauptstrasse 5, city Berlin, country Germany, pickup date 2026-11-20. Accept the terms.",
+ "provider": "oracle",
+ "recorded_at": "2026-10-29T19:17:23+00:00",
+ "decisions": [
+  {
+   "observation_digest": "80a38ef3453908d8",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Lukas Weber",
+      "submit": false,
+      "ref": "e1"
+     },
+     "reason": "script step 1"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "68e2435c2116d62d",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "lukas@weber.example",
+      "submit": false,
+      "ref": "e2"
+     },
+     "reason": "script step 2"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "5c2cbaeaae546908",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "555-300-4000",
+      "submit": false,
+      "ref": "e3"
+     },
+     "reason": "script step 3"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "ec7a7d2e79c19fb6",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e4"
+     },
+     "reason": "script step 4"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "8d7a0ad3f6ab93c4",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Hauptstrasse 5",
+      "submit": false,
+      "ref": "e1"
+     },
+     "reason": "script step 5"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "2d9b87674a94bc08",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "Berlin",
+      "submit": false,
+      "ref": "e2"
+     },
+     "reason": "script step 6"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "125b2759f4e0f52b",
+   "decision": {
+    "action": {
+     "name": "select_option",
+     "args": {
+      "option": "Germany",
+      "ref": "e3"
+     },
+     "reason": "script step 7"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "65b9b766590d596a",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e5"
+     },
+     "reason": "script step 8"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "d9d4ab669772bb63",
+   "decision": {
+    "action": {
+     "name": "type",
+     "args": {
+      "text": "2026-11-20",
+      "submit": false,
+      "ref": "e6"
+     },
+     "reason": "script step 9"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "b34ebb99b549b605",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e8"
+     },
+     "reason": "script step 10"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "59261d3da84119e6",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e3"
+     },
+     "reason": "script step 11"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "9422389dfcfb4924",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e5"
+     },
+     "reason": "script step 12"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "2a00a29e00d3fe03",
+   "decision": {
+    "action": {
+     "name": "click",
+     "args": {
+      "ref": "e2"
+     },
+     "reason": "script step 13"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  },
+  {
+   "observation_digest": "389ec750cdf48c05",
+   "decision": {
+    "action": {
+     "name": "done",
+     "args": {
+      "success": true,
+      "answer": "done"
+     },
+     "reason": "script step 14"
+    },
+    "thought": "",
+    "usage": {
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cache_read_tokens": 0,
+     "cache_write_tokens": 0
+    },
+    "model": "oracle",
+    "latency_s": 0.0
+   }
+  }
+ ]
+}
