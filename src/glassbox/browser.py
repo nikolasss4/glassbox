@@ -9,13 +9,13 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from playwright.async_api import Error as PlaywrightError
-from playwright.async_api import Page
+from playwright.async_api import Page, ViewportSize
 from playwright.async_api import TimeoutError as PlaywrightTimeout
 
 from glassbox.actions import Action, ActionResult
 
 SNAPSHOT_JS = (Path(__file__).parent / "snapshot.js").read_text()
-VIEWPORT = {"width": 1280, "height": 800}
+VIEWPORT: ViewportSize = {"width": 1280, "height": 800}
 
 
 @dataclass

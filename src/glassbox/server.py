@@ -96,6 +96,12 @@ def create_app(runs_dir: Path | None = None, *, headless: bool = True) -> FastAP
     async def health() -> dict[str, str]:
         return {"status": "ok"}
 
+    @app.get("/api/tasks")
+    async def list_tasks() -> list[dict[str, Any]]:
+        from glassbox.evals.tasks import TASKS
+
+        return [{"id": t.id, "goal": t.goal, "start": t.start, "tags": t.tags} for t in TASKS]
+
     @app.get("/api/runs")
     async def list_runs() -> list[dict[str, Any]]:
         runs = store.list()
@@ -127,7 +133,7 @@ def create_app(runs_dir: Path | None = None, *, headless: bool = True) -> FastAP
             provider = get_provider(req.model, effort=req.effort)
         except Exception as e:
             raise HTTPException(400, f"cannot create provider: {e}") from None
-        context = await state["browser"].new_context(viewport=VIEWPORT)  # type: ignore[arg-type]
+        context = await state["browser"].new_context(viewport=VIEWPORT)
         page = await context.new_page()
         writer = store.create(
             {

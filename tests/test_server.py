@@ -46,6 +46,7 @@ def test_live_run_streams_frames_and_steps(tmp_path: Path) -> None:
         assert len(trace["steps"]) == 3
         assert client.get("/api/runs").json()[0]["id"] == run_id
         assert client.get("/api/runs/nope").status_code == 404
+        assert any(t["id"] == "login-basic" for t in client.get("/api/tasks").json())
         del base
 
 
