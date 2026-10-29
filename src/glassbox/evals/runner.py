@@ -17,7 +17,7 @@ from playwright.async_api import Browser, Page, async_playwright
 from glassbox.agent import Agent, AgentConfig, RunResult
 from glassbox.browser import VIEWPORT, BrowserSession, Observation
 from glassbox.evals.tasks import TASKS_BY_ID, CheckContext, Task
-from glassbox.providers import Provider, register
+from glassbox.providers import Provider
 from glassbox.providers.base import Decision
 from glassbox.providers.replay import RecordingProvider
 from glassbox.providers.scripted import ScriptedProvider
@@ -42,9 +42,6 @@ class OracleProvider(Provider):
 
     async def decide(self, obs: Observation, feedback: str | None) -> Decision:
         return await self._inner.decide(obs, feedback)
-
-
-register("oracle", OracleProvider)
 
 
 @dataclass

@@ -60,6 +60,7 @@ class TraceWriter:
     def add_step(self, step: Step, observation: str) -> None:
         entry = step.model_dump(mode="json")
         entry["observation"] = observation
+        entry["cost_usd"] = step.usage.cost(step.model)
         entry["t"] = round(time.monotonic() - self._t0, 3)
         if step.screenshot:
             name = f"step-{step.index:03d}.jpg"

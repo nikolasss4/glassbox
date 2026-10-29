@@ -1,4 +1,4 @@
-"""Provider registry. A provider spec is a model name/alias, `random`, or `replay:<dir>`."""
+"""Provider registry. A spec is a model name/alias, `random`, `oracle` or `replay:<dir>`."""
 
 from __future__ import annotations
 
@@ -18,6 +18,10 @@ def register(name: str, factory: Callable[[], Provider]) -> None:
 def get_provider(spec: str, *, effort: str = "medium") -> Provider:
     if spec in _EXTRA:
         return _EXTRA[spec]()
+    if spec == "oracle":
+        from glassbox.evals.runner import OracleProvider
+
+        return OracleProvider()
     if spec == "random":
         from glassbox.providers.random_baseline import RandomProvider
 

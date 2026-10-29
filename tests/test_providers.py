@@ -114,6 +114,7 @@ async def test_random_baseline_is_seeded_per_task() -> None:
 
 def test_registry() -> None:
     assert get_provider("random").name == "random"
+    assert get_provider("oracle").name == "oracle"
     assert get_provider("opus", effort="low").name == "claude-opus-5-5"
 
 
