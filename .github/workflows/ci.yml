@@ -52,3 +52,16 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t glassbox .
+      - name: Smoke test
+        run: |
+          docker run -d --name gb -p 8000:8000 --shm-size 1g glassbox
+          for i in $(seq 1 30); do curl -fs localhost:8000/api/health && break; sleep 2; done
+          curl -fs localhost:8000/ | grep -q '<div id="root">'
+          curl -fs localhost:8000/sites/shop/ | grep -q Brightside

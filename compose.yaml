@@ -1,0 +1,11 @@
+services:
+  glassbox:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Optional: only needed to run Claude. Baselines and replays work without it.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+    volumes:
+      - ./runs:/data/runs
+    shm_size: 1gb  # Chromium needs more than Docker's 64 MB default
