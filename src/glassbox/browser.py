@@ -15,6 +15,15 @@ from playwright.async_api import TimeoutError as PlaywrightTimeout
 from glassbox.actions import Action, ActionResult
 
 SNAPSHOT_JS = (Path(__file__).parent / "snapshot.js").read_text()
+
+# True when the element's click point is under another element (overlay, modal, banner).
+COVERED_JS = """(el) => {
+  el.scrollIntoView({block: "center", inline: "center", behavior: "instant"});
+  const r = el.getBoundingClientRect();
+  const hit = document.elementFromPoint(r.left + Math.min(r.width / 2, 40), r.top + r.height / 2);
+  return !!hit && hit !== el && !el.contains(hit) && !hit.contains(el) &&
+    !(el.labels && [...el.labels].some((l) => l.contains(hit)));
+}"""
 VIEWPORT: ViewportSize = {"width": 1280, "height": 800}
 
 
@@ -141,9 +150,28 @@ class BrowserSession:
         return ActionResult(ok=True, message=f"Opened {url}")
 
     async def _do_click(self, ref: str) -> ActionResult:
+        loc = self._locator(ref)
+        if await loc.count() and await self._covered(loc):
+            # Fail fast instead of letting Playwright wait out its timeout behind an overlay.
+            return ActionResult(
+                ok=False,
+                message=f"click {ref} failed: another element (an overlay, banner or dialog) "
+                "is covering it.",
+            )
         return await self._with_retries(
             ref, "click", lambda loc: loc.click(timeout=self.action_timeout_ms)
         )
+
+    async def _covered(self, loc) -> bool:  # type: ignore[no-untyped-def]
+        for attempt in range(2):
+            try:
+                if not await loc.evaluate(COVERED_JS):
+                    return False
+            except PlaywrightError:
+                return False  # let the normal click path report the problem
+            if attempt == 0:
+                await asyncio.sleep(0.3)  # an animation may still be finishing
+        return True
 
     async def _do_type(self, ref: str, text: str, submit: bool = False) -> ActionResult:
         async def op(loc) -> None:  # type: ignore[no-untyped-def]

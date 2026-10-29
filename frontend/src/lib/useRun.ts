@@ -17,11 +17,8 @@ export function useRun(id: string | null) {
 
   useEffect(() => {
     if (!id) return
+    // RunView is keyed by run id, so state starts fresh for every run.
     let cancelled = false
-    setTrace(null)
-    setFrame(null)
-    setStatus(null)
-    setError(null)
 
     api.trace(id).then(
       (t) => {

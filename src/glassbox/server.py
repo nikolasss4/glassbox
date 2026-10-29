@@ -67,6 +67,7 @@ class LiveRun:
 
 def step_message(run_id: str, step: Step, doc_step: dict[str, Any]) -> dict[str, Any]:
     data = step.model_dump(mode="json", exclude={"raw"})
+    data["observation"] = doc_step.get("observation", "")
     data["thinking"] = (step.raw or {}).get("thinking", "")
     data["cost_usd"] = step.usage.cost(step.model)
     if shot := doc_step.get("screenshot"):
