@@ -11,4 +11,4 @@ body { @apply bg-zinc-950 text-zinc-200 antialiased; }
 /* Thin scrollbars that match the dark UI. */
 * { scrollbar-width: thin; scrollbar-color: #3f3f46 transparent; }
 
-input[type="range"].scrubber { @apply w-full cursor-pointer accent-sky-400; }
+input[type="range"].scrubber { @apply w-full cursor-pointer accent-sky-400 focus:outline-none; }

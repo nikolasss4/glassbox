@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useRun } from '../lib/useRun'
 import { fmtCost, fmtSecs } from '../lib/format'
 import { Controls, ResumeBar } from './Controls'
+import { Scrubber } from './Scrubber'
 import { TakeoverLayer } from './TakeoverLayer'
 import { Timeline } from './Timeline'
 import { StatusPill } from './ui'
@@ -57,7 +58,11 @@ export function RunView({ runId }: { runId: string }) {
               {paused && <TakeoverLayer frame={frame} send={send} />}
             </Viewport>
           </div>
-          {paused && <ResumeBar send={send} />}
+          {paused ? (
+            <ResumeBar send={send} />
+          ) : (
+            <Scrubber steps={trace.steps} selected={selected} onSelect={setSelected} live={live} />
+          )}
         </div>
       </div>
       <Timeline
