@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="/sites/common.css"><script src="/sites/store.js"></script><script src="shop.js"></script><title>Brightside Shop</title></head><body>
+<main>
+  <form id="search" class="row card" role="search">
+    <input type="search" id="q" placeholder="Search products" aria-label="Search products" style="max-width:300px">
+    <select id="cat" aria-label="Category"><option value="">All categories</option></select>
+    <select id="sort" aria-label="Sort by"><option value="">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="rating">Top rated</option></select>
+    <button type="submit">Search</button>
+  </form>
+  <p id="count" class="muted"></p>
+  <div class="grid" id="grid"></div>
+</main>
+<script>
+shopHeader();
+const params = new URLSearchParams(location.search);
+const q = document.getElementById("q"), cat = document.getElementById("cat"), sort = document.getElementById("sort");
+[...new Set(PRODUCTS.map((p) => p.category))].forEach((c) => cat.insertAdjacentHTML("beforeend", '<option>' + c + '</option>'));
+q.value = params.get("q") || ""; cat.value = params.get("category") || ""; sort.value = params.get("sort") || "";
+let items = PRODUCTS.filter((p) => (!q.value || p.name.toLowerCase().includes(q.value.toLowerCase())) && (!cat.value || p.category === cat.value));
+if (sort.value === "price-asc") items.sort((a, b) => a.price - b.price);
+if (sort.value === "price-desc") items.sort((a, b) => b.price - a.price);
+if (sort.value === "rating") items.sort((a, b) => b.rating - a.rating);
+document.getElementById("count").textContent = items.length + " products";
+document.getElementById("grid").innerHTML = items.map((p) => `
+  <div class="card"><a href="/sites/shop/product.html?id=${p.id}"><strong>${p.name}</strong></a>
+  <div>${money(p.price)}</div><div class="muted">${p.category}</div>
+  <button data-id="${p.id}" class="add">Add to cart</button></div>`).join("");
+document.querySelectorAll(".add").forEach((b) => b.onclick = () => { addToCart(b.dataset.id, 1); b.textContent = "Added ✓"; });
+document.getElementById("search").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const p = new URLSearchParams();
+  if (q.value) p.set("q", q.value); if (cat.value) p.set("category", cat.value); if (sort.value) p.set("sort", sort.value);
+  location.search = p.toString();
+});
+</script></body></html>

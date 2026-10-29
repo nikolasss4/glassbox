@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="/sites/common.css"><script src="/sites/store.js"></script><script src="shop.js"></script><title>Cart · Brightside</title></head><body>
+<main><div class="card"><h1>Your cart</h1><table><thead><tr><th>Item</th><th>Price</th><th>Qty</th><th></th></tr></thead><tbody id="lines"></tbody></table>
+<form id="coupon" class="row" style="margin-top:16px"><input type="text" id="code" placeholder="Coupon code" aria-label="Coupon code" style="max-width:200px"><button class="secondary" type="submit">Apply</button><span id="cmsg"></span></form>
+<div id="totals" style="margin-top:16px"></div>
+<a class="btn" href="/sites/shop/checkout.html" id="checkout">Checkout</a></div></main>
+<script>
+shopHeader();
+function render() {
+  const c = cart();
+  document.getElementById("lines").innerHTML = c.length ? c.map((l) => { const p = product(l.id); return `
+    <tr><td>${p.name}</td><td>${money(p.price)}</td>
+    <td><button class="secondary dec" data-id="${l.id}" aria-label="Decrease ${p.name}">−</button> ${l.qty}
+        <button class="secondary inc" data-id="${l.id}" aria-label="Increase ${p.name}">+</button></td>
+    <td><button class="secondary rm" data-id="${l.id}">Remove ${p.name}</button></td></tr>`; }).join("")
+    : '<tr><td colspan="4">Your cart is empty.</td></tr>';
+  const t = cartTotals();
+  document.getElementById("totals").innerHTML = `<div>Subtotal: ${money(t.subtotal)}</div>` +
+    (t.code ? `<div>Discount (${t.code}): −${money(t.discount)}</div>` : "") + `<div><strong>Total: ${money(t.total)}</strong></div>`;
+  const mod = (id, d) => { const c = cart(); const l = c.find((x) => x.id === id); l.qty += d; saveCart(c); render(); };
+  document.querySelectorAll(".inc").forEach((b) => b.onclick = () => mod(b.dataset.id, 1));
+  document.querySelectorAll(".dec").forEach((b) => b.onclick = () => mod(b.dataset.id, -1));
+  document.querySelectorAll(".rm").forEach((b) => b.onclick = () => { saveCart(cart().filter((l) => l.id !== b.dataset.id)); render(); });
+}
+document.getElementById("coupon").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const code = document.getElementById("code").value.trim().toUpperCase();
+  const msg = document.getElementById("cmsg");
+  if (COUPONS[code]) { gbStore.set("shop:coupon", code); msg.textContent = "Coupon applied."; msg.className = "success"; }
+  else { msg.textContent = "That code is not valid."; msg.className = "error"; }
+  render();
+});
+render();
+</script></body></html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>People Directory</title><link rel="stylesheet" href="/sites/common.css"></head>
+<body>
+<header class="site"><span class="brand">PeopleCo Directory</span></header>
+<main>
+  <div class="card row">
+    <input type="search" id="q" placeholder="Search by name" aria-label="Search by name" style="max-width:260px">
+    <select id="dept" aria-label="Department"><option value="">All departments</option></select>
+    <span class="muted" id="count"></span>
+  </div>
+  <table><thead><tr>
+    <th><button data-k="id">ID</button></th><th><button data-k="name">Name</button></th><th>Email</th>
+    <th><button data-k="department">Department</button></th><th><button data-k="city">City</button></th>
+    <th><button data-k="salary">Salary</button></th><th><button data-k="hired">Hired</button></th>
+  </tr></thead><tbody id="rows"></tbody></table>
+  <nav class="row" style="margin-top:12px" aria-label="Pagination">
+    <button class="secondary" id="prev">Previous</button><span id="page"></span><button class="secondary" id="next">Next</button>
+  </nav>
+</main>
+<script>
+const PAGE = 10;
+let all = [], page = 0, key = "id", dir = 1;
+const $ = (id) => document.getElementById(id);
+function view() {
+  const q = $("q").value.toLowerCase(), d = $("dept").value;
+  const rows = all.filter((r) => (!q || r.name.toLowerCase().includes(q)) && (!d || r.department === d))
+    .sort((a, b) => (a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0) * dir);
+  const pages = Math.max(1, Math.ceil(rows.length / PAGE));
+  page = Math.min(page, pages - 1);
+  $("rows").innerHTML = rows.slice(page * PAGE, page * PAGE + PAGE).map((r) =>
+    `<tr><td>${r.id}</td><td>${r.name}</td><td>${r.email}</td><td>${r.department}</td><td>${r.city}</td><td>$${r.salary.toLocaleString("en-US")}</td><td>${r.hired}</td></tr>`).join("");
+  $("count").textContent = rows.length + " people";
+  $("page").textContent = "Page " + (page + 1) + " of " + pages;
+  $("prev").disabled = page === 0; $("next").disabled = page >= pages - 1;
+  document.querySelectorAll("th button").forEach((b) => b.textContent = b.textContent.replace(/ [▲▼]$/, "") + (b.dataset.k === key ? (dir > 0 ? " ▲" : " ▼") : ""));
+}
+fetch("employees.json").then((r) => r.json()).then((rows) => {
+  all = rows;
+  [...new Set(rows.map((r) => r.department))].sort().forEach((d) => $("dept").insertAdjacentHTML("beforeend", "<option>" + d + "</option>"));
+  view();
+});
+$("q").oninput = () => { page = 0; view(); };
+$("dept").onchange = () => { page = 0; view(); };
+$("prev").onclick = () => { page--; view(); };
+$("next").onclick = () => { page++; view(); };
+document.querySelectorAll("th button").forEach((b) => b.onclick = () => { dir = key === b.dataset.k ? -dir : 1; key = b.dataset.k; view(); });
+</script></body></html>

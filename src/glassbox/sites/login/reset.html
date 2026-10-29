@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="/sites/common.css"><script src="/sites/store.js"></script><script src="accounts.js"></script><title>Reset password · Acme Accounts</title></head><body>
+<header class="site"><a class="brand" href="/sites/login/">Acme Accounts</a><nav><a href="/sites/login/">Sign in</a><a href="/sites/login/help.html">Help</a></nav></header>
+<main><div class="card" style="max-width:480px">
+  <h1>Reset your password</h1>
+  <form id="f"><label for="e">Account email</label><input type="email" id="e">
+  <div style="margin-top:16px"><button type="submit">Send reset link</button></div></form>
+  <div id="out" role="status"></div>
+</div></main>
+<script>
+document.getElementById("f").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = document.getElementById("e").value.trim().toLowerCase();
+  const user = Object.keys(ACCOUNTS).find((k) => ACCOUNTS[k].email === email);
+  const out = document.getElementById("out");
+  if (!user) { out.innerHTML = '<p class="error">No account with that email.</p>'; return; }
+  // Stand-in for "check your inbox": the demo shows the emailed link inline.
+  out.innerHTML = '<p class="success">Reset email sent. Demo inbox:</p>' +
+    '<p><a href="/sites/login/new-password.html?user=' + user + '&token=demo">Open reset link for ' + user + '</a></p>';
+});
+</script></body></html>

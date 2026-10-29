@@ -1,0 +1,569 @@
+[
+ {
+  "id": "E-1001",
+  "name": "Priya Nair",
+  "email": "priya.nair@peopleco.example",
+  "department": "Marketing",
+  "city": "Berlin",
+  "salary": 74000,
+  "hired": "2018-07-21"
+ },
+ {
+  "id": "E-1002",
+  "name": "Marcus Bell",
+  "email": "marcus.bell@peopleco.example",
+  "department": "Finance",
+  "city": "Berlin",
+  "salary": 112000,
+  "hired": "2017-06-19"
+ },
+ {
+  "id": "E-1003",
+  "name": "Lena Fischer",
+  "email": "lena.fischer@peopleco.example",
+  "department": "Sales",
+  "city": "Madrid",
+  "salary": 69000,
+  "hired": "2016-02-14"
+ },
+ {
+  "id": "E-1004",
+  "name": "Tomás Alvarez",
+  "email": "tomas.alvarez@peopleco.example",
+  "department": "Sales",
+  "city": "Berlin",
+  "salary": 117000,
+  "hired": "2017-09-14"
+ },
+ {
+  "id": "E-1005",
+  "name": "Aiko Tanaka",
+  "email": "aiko.tanaka@peopleco.example",
+  "department": "Finance",
+  "city": "Berlin",
+  "salary": 116000,
+  "hired": "2017-04-21"
+ },
+ {
+  "id": "E-1006",
+  "name": "Daniel Okafor",
+  "email": "daniel.okafor@peopleco.example",
+  "department": "Finance",
+  "city": "Berlin",
+  "salary": 115000,
+  "hired": "2022-01-08"
+ },
+ {
+  "id": "E-1007",
+  "name": "Fatima Haddad",
+  "email": "fatima.haddad@peopleco.example",
+  "department": "Sales",
+  "city": "Lisbon",
+  "salary": 101000,
+  "hired": "2020-07-05"
+ },
+ {
+  "id": "E-1008",
+  "name": "Jonas Berg",
+  "email": "jonas.berg@peopleco.example",
+  "department": "Marketing",
+  "city": "Lisbon",
+  "salary": 107000,
+  "hired": "2024-11-06"
+ },
+ {
+  "id": "E-1009",
+  "name": "Chloe Martin",
+  "email": "chloe.martin@peopleco.example",
+  "department": "Finance",
+  "city": "Lisbon",
+  "salary": 115000,
+  "hired": "2026-04-12"
+ },
+ {
+  "id": "E-1010",
+  "name": "Ravi Iyer",
+  "email": "ravi.iyer@peopleco.example",
+  "department": "Design",
+  "city": "Austin",
+  "salary": 106000,
+  "hired": "2017-10-02"
+ },
+ {
+  "id": "E-1011",
+  "name": "Sofia Rossi",
+  "email": "sofia.rossi@peopleco.example",
+  "department": "Design",
+  "city": "Nairobi",
+  "salary": 104000,
+  "hired": "2024-07-25"
+ },
+ {
+  "id": "E-1012",
+  "name": "Ethan Clarke",
+  "email": "ethan.clarke@peopleco.example",
+  "department": "Finance",
+  "city": "Austin",
+  "salary": 130000,
+  "hired": "2023-06-10"
+ },
+ {
+  "id": "E-1013",
+  "name": "Mei Chen",
+  "email": "mei.chen@peopleco.example",
+  "department": "Sales",
+  "city": "Singapore",
+  "salary": 98000,
+  "hired": "2019-02-19"
+ },
+ {
+  "id": "E-1014",
+  "name": "Omar Saleh",
+  "email": "omar.saleh@peopleco.example",
+  "department": "Support",
+  "city": "Singapore",
+  "salary": 83000,
+  "hired": "2021-12-15"
+ },
+ {
+  "id": "E-1015",
+  "name": "Hannah Weber",
+  "email": "hannah.weber@peopleco.example",
+  "department": "Engineering",
+  "city": "Toronto",
+  "salary": 153000,
+  "hired": "2017-09-15"
+ },
+ {
+  "id": "E-1016",
+  "name": "Lucas Moreau",
+  "email": "lucas.moreau@peopleco.example",
+  "department": "Marketing",
+  "city": "Berlin",
+  "salary": 112000,
+  "hired": "2018-08-14"
+ },
+ {
+  "id": "E-1017",
+  "name": "Zara Khan",
+  "email": "zara.khan@peopleco.example",
+  "department": "Engineering",
+  "city": "Nairobi",
+  "salary": 126000,
+  "hired": "2024-10-26"
+ },
+ {
+  "id": "E-1018",
+  "name": "Felix Lang",
+  "email": "felix.lang@peopleco.example",
+  "department": "Design",
+  "city": "Seoul",
+  "salary": 79000,
+  "hired": "2021-10-16"
+ },
+ {
+  "id": "E-1019",
+  "name": "Amara Mensah",
+  "email": "amara.mensah@peopleco.example",
+  "department": "Engineering",
+  "city": "Lisbon",
+  "salary": 108000,
+  "hired": "2020-08-23"
+ },
+ {
+  "id": "E-1020",
+  "name": "Noah Silva",
+  "email": "noah.silva@peopleco.example",
+  "department": "Design",
+  "city": "Seoul",
+  "salary": 93000,
+  "hired": "2020-11-19"
+ },
+ {
+  "id": "E-1021",
+  "name": "Ines Duarte",
+  "email": "ines.duarte@peopleco.example",
+  "department": "Design",
+  "city": "Berlin",
+  "salary": 104000,
+  "hired": "2022-11-12"
+ },
+ {
+  "id": "E-1022",
+  "name": "Kenji Sato",
+  "email": "kenji.sato@peopleco.example",
+  "department": "Marketing",
+  "city": "Seoul",
+  "salary": 73000,
+  "hired": "2018-10-04"
+ },
+ {
+  "id": "E-1023",
+  "name": "Grace Kim",
+  "email": "grace.kim@peopleco.example",
+  "department": "Sales",
+  "city": "Austin",
+  "salary": 90000,
+  "hired": "2020-03-24"
+ },
+ {
+  "id": "E-1024",
+  "name": "Mateo Romero",
+  "email": "mateo.romero@peopleco.example",
+  "department": "Support",
+  "city": "Seoul",
+  "salary": 70000,
+  "hired": "2023-02-06"
+ },
+ {
+  "id": "E-1025",
+  "name": "Yara Aziz",
+  "email": "yara.aziz@peopleco.example",
+  "department": "Finance",
+  "city": "Madrid",
+  "salary": 135000,
+  "hired": "2020-03-27"
+ },
+ {
+  "id": "E-1026",
+  "name": "Oscar Novak",
+  "email": "oscar.novak@peopleco.example",
+  "department": "Finance",
+  "city": "Nairobi",
+  "salary": 123000,
+  "hired": "2020-12-14"
+ },
+ {
+  "id": "E-1027",
+  "name": "Nadia Petrov",
+  "email": "nadia.petrov@peopleco.example",
+  "department": "Support",
+  "city": "Toronto",
+  "salary": 54000,
+  "hired": "2019-03-03"
+ },
+ {
+  "id": "E-1028",
+  "name": "Leo Dubois",
+  "email": "leo.dubois@peopleco.example",
+  "department": "Sales",
+  "city": "Seoul",
+  "salary": 118000,
+  "hired": "2026-04-01"
+ },
+ {
+  "id": "E-1029",
+  "name": "Elif Yilmaz",
+  "email": "elif.yilmaz@peopleco.example",
+  "department": "Finance",
+  "city": "Berlin",
+  "salary": 89000,
+  "hired": "2018-05-10"
+ },
+ {
+  "id": "E-1030",
+  "name": "Samuel Owusu",
+  "email": "samuel.owusu@peopleco.example",
+  "department": "Support",
+  "city": "Nairobi",
+  "salary": 53000,
+  "hired": "2024-06-20"
+ },
+ {
+  "id": "E-1031",
+  "name": "Maya Patel",
+  "email": "maya.patel@peopleco.example",
+  "department": "Design",
+  "city": "Berlin",
+  "salary": 104000,
+  "hired": "2024-10-21"
+ },
+ {
+  "id": "E-1032",
+  "name": "Viktor Horvat",
+  "email": "viktor.horvat@peopleco.example",
+  "department": "Design",
+  "city": "Madrid",
+  "salary": 100000,
+  "hired": "2024-07-13"
+ },
+ {
+  "id": "E-1033",
+  "name": "Ana Costa",
+  "email": "ana.costa@peopleco.example",
+  "department": "Engineering",
+  "city": "Berlin",
+  "salary": 117000,
+  "hired": "2023-11-13"
+ },
+ {
+  "id": "E-1034",
+  "name": "Theo Wright",
+  "email": "theo.wright@peopleco.example",
+  "department": "Engineering",
+  "city": "Lisbon",
+  "salary": 126000,
+  "hired": "2019-08-06"
+ },
+ {
+  "id": "E-1035",
+  "name": "Leila Farah",
+  "email": "leila.farah@peopleco.example",
+  "department": "Finance",
+  "city": "Toronto",
+  "salary": 114000,
+  "hired": "2016-02-01"
+ },
+ {
+  "id": "E-1036",
+  "name": "Hugo Lopez",
+  "email": "hugo.lopez@peopleco.example",
+  "department": "Engineering",
+  "city": "Lisbon",
+  "salary": 160000,
+  "hired": "2021-10-01"
+ },
+ {
+  "id": "E-1037",
+  "name": "Aisha Bello",
+  "email": "aisha.bello@peopleco.example",
+  "department": "Sales",
+  "city": "Singapore",
+  "salary": 87000,
+  "hired": "2025-07-05"
+ },
+ {
+  "id": "E-1038",
+  "name": "Ben Adler",
+  "email": "ben.adler@peopleco.example",
+  "department": "Finance",
+  "city": "Lisbon",
+  "salary": 134000,
+  "hired": "2021-08-04"
+ },
+ {
+  "id": "E-1039",
+  "name": "Clara Hoffmann",
+  "email": "clara.hoffmann@peopleco.example",
+  "department": "Support",
+  "city": "Singapore",
+  "salary": 50000,
+  "hired": "2023-08-16"
+ },
+ {
+  "id": "E-1040",
+  "name": "Diego Reyes",
+  "email": "diego.reyes@peopleco.example",
+  "department": "Sales",
+  "city": "Singapore",
+  "salary": 95000,
+  "hired": "2017-12-11"
+ },
+ {
+  "id": "E-1041",
+  "name": "Emma Brown",
+  "email": "emma.brown@peopleco.example",
+  "department": "Design",
+  "city": "Austin",
+  "salary": 108000,
+  "hired": "2018-09-01"
+ },
+ {
+  "id": "E-1042",
+  "name": "Farid Karimi",
+  "email": "farid.karimi@peopleco.example",
+  "department": "Marketing",
+  "city": "Berlin",
+  "salary": 118000,
+  "hired": "2018-12-18"
+ },
+ {
+  "id": "E-1043",
+  "name": "Gemma Price",
+  "email": "gemma.price@peopleco.example",
+  "department": "Finance",
+  "city": "Lisbon",
+  "salary": 124000,
+  "hired": "2020-11-28"
+ },
+ {
+  "id": "E-1044",
+  "name": "Ivan Sokolov",
+  "email": "ivan.sokolov@peopleco.example",
+  "department": "Marketing",
+  "city": "Nairobi",
+  "salary": 119000,
+  "hired": "2024-06-06"
+ },
+ {
+  "id": "E-1045",
+  "name": "Julia Meyer",
+  "email": "julia.meyer@peopleco.example",
+  "department": "Sales",
+  "city": "Nairobi",
+  "salary": 105000,
+  "hired": "2024-09-25"
+ },
+ {
+  "id": "E-1046",
+  "name": "Kofi Asante",
+  "email": "kofi.asante@peopleco.example",
+  "department": "Sales",
+  "city": "Austin",
+  "salary": 117000,
+  "hired": "2025-04-26"
+ },
+ {
+  "id": "E-1047",
+  "name": "Lara Ward",
+  "email": "lara.ward@peopleco.example",
+  "department": "Support",
+  "city": "Seoul",
+  "salary": 67000,
+  "hired": "2019-04-17"
+ },
+ {
+  "id": "E-1048",
+  "name": "Milan Kovac",
+  "email": "milan.kovac@peopleco.example",
+  "department": "Design",
+  "city": "Singapore",
+  "salary": 105000,
+  "hired": "2016-01-26"
+ },
+ {
+  "id": "E-1049",
+  "name": "Nora Lund",
+  "email": "nora.lund@peopleco.example",
+  "department": "Marketing",
+  "city": "Nairobi",
+  "salary": 98000,
+  "hired": "2019-12-20"
+ },
+ {
+  "id": "E-1050",
+  "name": "Pavel Popov",
+  "email": "pavel.popov@peopleco.example",
+  "department": "Design",
+  "city": "Austin",
+  "salary": 81000,
+  "hired": "2021-06-03"
+ },
+ {
+  "id": "E-1051",
+  "name": "Quinn Hayes",
+  "email": "quinn.hayes@peopleco.example",
+  "department": "Sales",
+  "city": "Austin",
+  "salary": 95000,
+  "hired": "2023-04-11"
+ },
+ {
+  "id": "E-1052",
+  "name": "Rosa Ortiz",
+  "email": "rosa.ortiz@peopleco.example",
+  "department": "Finance",
+  "city": "Nairobi",
+  "salary": 131000,
+  "hired": "2025-01-16"
+ },
+ {
+  "id": "E-1053",
+  "name": "Sven Nilsson",
+  "email": "sven.nilsson@peopleco.example",
+  "department": "Design",
+  "city": "Madrid",
+  "salary": 125000,
+  "hired": "2017-11-04"
+ },
+ {
+  "id": "E-1054",
+  "name": "Tara Shah",
+  "email": "tara.shah@peopleco.example",
+  "department": "Design",
+  "city": "Madrid",
+  "salary": 125000,
+  "hired": "2019-08-07"
+ },
+ {
+  "id": "E-1055",
+  "name": "Uma Rao",
+  "email": "uma.rao@peopleco.example",
+  "department": "Design",
+  "city": "Madrid",
+  "salary": 104000,
+  "hired": "2021-02-26"
+ },
+ {
+  "id": "E-1056",
+  "name": "Wen Liu",
+  "email": "wen.liu@peopleco.example",
+  "department": "Support",
+  "city": "Toronto",
+  "salary": 53000,
+  "hired": "2017-12-06"
+ },
+ {
+  "id": "E-1057",
+  "name": "Xavier Garcia",
+  "email": "xavier.garcia@peopleco.example",
+  "department": "Engineering",
+  "city": "Toronto",
+  "salary": 144000,
+  "hired": "2018-10-15"
+ },
+ {
+  "id": "E-1058",
+  "name": "Yusuf Demir",
+  "email": "yusuf.demir@peopleco.example",
+  "department": "Finance",
+  "city": "Toronto",
+  "salary": 115000,
+  "hired": "2023-11-12"
+ },
+ {
+  "id": "E-1059",
+  "name": "Zoe Evans",
+  "email": "zoe.evans@peopleco.example",
+  "department": "Finance",
+  "city": "Lisbon",
+  "salary": 113000,
+  "hired": "2018-01-01"
+ },
+ {
+  "id": "E-1060",
+  "name": "Arjun Mehta",
+  "email": "arjun.mehta@peopleco.example",
+  "department": "Design",
+  "city": "Austin",
+  "salary": 127000,
+  "hired": "2018-07-28"
+ },
+ {
+  "id": "E-1061",
+  "name": "Bianca Ricci",
+  "email": "bianca.ricci@peopleco.example",
+  "department": "Sales",
+  "city": "Singapore",
+  "salary": 97000,
+  "hired": "2016-05-07"
+ },
+ {
+  "id": "E-1062",
+  "name": "Caleb Foster",
+  "email": "caleb.foster@peopleco.example",
+  "department": "Sales",
+  "city": "Madrid",
+  "salary": 118000,
+  "hired": "2025-06-09"
+ },
+ {
+  "id": "E-1063",
+  "name": "Dina Levy",
+  "email": "dina.levy@peopleco.example",
+  "department": "Sales",
+  "city": "Seoul",
+  "salary": 107000,
+  "hired": "2016-12-12"
+ }
+]

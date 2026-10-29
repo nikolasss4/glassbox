@@ -1,0 +1,92 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Parcel Wizard · Send a parcel</title><link rel="stylesheet" href="/sites/common.css"><script src="/sites/store.js"></script></head>
+<body>
+<header class="site"><span class="brand">Parcel Wizard</span><nav><span class="muted" id="progress">Step 1 of 4</span></nav></header>
+<main><form class="card" id="wiz" novalidate style="max-width:620px">
+  <section data-step="1">
+    <h1>Sender details</h1>
+    <label for="name">Full name</label><input type="text" id="name">
+    <label for="email">Email</label><input type="email" id="email">
+    <label for="phone">Phone</label><input type="tel" id="phone" placeholder="555-123-4567">
+    <div class="hint">Format: three digits, three digits, four digits, separated by dashes (e.g. 555-123-4567).</div>
+  </section>
+  <section data-step="2" class="hidden">
+    <h1>Shipping</h1>
+    <label for="street">Street address</label><input type="text" id="street">
+    <label for="city">City</label><input type="text" id="city">
+    <label for="country">Country</label>
+    <select id="country"><option value="">Select a country</option><option>United States</option><option>Canada</option><option>Germany</option><option>France</option><option>Spain</option><option>Japan</option></select>
+    <fieldset style="border:0;padding:0;margin-top:12px"><legend style="font-weight:600">Delivery speed</legend>
+      <label style="font-weight:400"><input type="radio" name="speed" value="standard" checked> Standard (5–7 days)</label>
+      <label style="font-weight:400"><input type="radio" name="speed" value="express"> Express (1–2 days)</label>
+    </fieldset>
+    <label for="date">Pickup date</label><input type="date" id="date">
+  </section>
+  <section data-step="3" class="hidden">
+    <h1>Preferences</h1>
+    <label style="font-weight:400"><input type="checkbox" id="newsletter" checked> Send me the Parcel Wizard newsletter</label>
+    <label style="font-weight:400"><input type="checkbox" id="sms"> Text me tracking updates</label>
+    <label style="font-weight:400"><input type="checkbox" id="terms"> I accept the terms of service</label>
+  </section>
+  <section data-step="4" class="hidden">
+    <h1>Review</h1><dl id="review"></dl>
+  </section>
+  <div id="err" class="error" role="alert"></div>
+  <div class="row" style="margin-top:20px">
+    <button type="button" class="secondary hidden" id="back">Back</button>
+    <button type="button" id="next">Continue</button>
+    <button type="button" id="submit" class="hidden">Submit request</button>
+  </div>
+  <div id="done" class="hidden"><h2 class="success">Request submitted</h2><p>We emailed you a confirmation.</p></div>
+</form></main>
+<script>
+let step = 1;
+const $ = (id) => document.getElementById(id);
+const val = (id) => $(id).value.trim();
+function data() {
+  return {
+    name: val("name"), email: val("email"), phone: val("phone"), street: val("street"), city: val("city"),
+    country: val("country"), speed: document.querySelector("input[name=speed]:checked").value, date: val("date"),
+    newsletter: $("newsletter").checked, sms: $("sms").checked, terms: $("terms").checked,
+  };
+}
+function validate(n) {
+  const d = data();
+  if (n === 1) {
+    if (!d.name) return "Full name is required.";
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)) return "Enter a valid email address.";
+    if (!/^\d{3}-\d{3}-\d{4}$/.test(d.phone)) return "Phone must look like 555-123-4567.";
+  }
+  if (n === 2) {
+    if (!d.street || !d.city) return "Street address and city are required.";
+    if (!d.country) return "Select a country.";
+    if (!d.date) return "Choose a pickup date.";
+  }
+  if (n === 3 && !d.terms) return "You must accept the terms of service.";
+  return "";
+}
+function show() {
+  document.querySelectorAll("section[data-step]").forEach((s) => s.classList.toggle("hidden", +s.dataset.step !== step));
+  $("back").classList.toggle("hidden", step === 1);
+  $("next").classList.toggle("hidden", step === 4);
+  $("submit").classList.toggle("hidden", step !== 4);
+  $("progress").textContent = "Step " + step + " of 4";
+  if (step === 4) {
+    $("review").innerHTML = Object.entries(data()).map(([k, v]) => "<dt><strong>" + k + "</strong></dt><dd>" + v + "</dd>").join("");
+  }
+}
+$("next").onclick = () => {
+  const e = validate(step);
+  $("err").textContent = e;
+  if (!e) { step++; show(); }
+};
+$("back").onclick = () => { $("err").textContent = ""; step--; show(); };
+$("submit").onclick = () => {
+  const subs = gbStore.get("form:submissions", []);
+  subs.push(data());
+  gbStore.set("form:submissions", subs);
+  document.querySelectorAll("section, .row").forEach((el) => el.classList.add("hidden"));
+  $("done").classList.remove("hidden");
+};
+show();
+</script></body></html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="/sites/common.css"><script src="/sites/store.js"></script><script src="shop.js"></script><title>Product · Brightside</title></head><body>
+<main><div class="card" id="p"></div><a href="/sites/shop/">← Back to shop</a></main>
+<script>
+shopHeader();
+const p = product(new URLSearchParams(location.search).get("id"));
+document.title = p.name + " · Brightside";
+document.getElementById("p").innerHTML = `<h1>${p.name}</h1><p style="font-size:22px">${money(p.price)}</p>
+  <p>Category: ${p.category}</p><p>Customer rating: ${p.rating.toFixed(1)} / 5</p>
+  <div class="row"><label for="qty" style="margin:0">Quantity</label>
+  <input type="text" id="qty" value="1" style="width:70px" inputmode="numeric">
+  <button id="add">Add to cart</button></div><p id="msg" class="success" role="status"></p>`;
+document.getElementById("add").onclick = () => {
+  const n = parseInt(document.getElementById("qty").value, 10);
+  if (!(n > 0)) { document.getElementById("msg").textContent = "Enter a quantity of at least 1."; return; }
+  addToCart(p.id, n);
+  document.getElementById("msg").textContent = "Added " + n + " × " + p.name + " to your cart.";
+};
+</script></body></html>

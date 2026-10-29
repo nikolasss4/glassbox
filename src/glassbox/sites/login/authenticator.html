@@ -1,0 +1,11 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="/sites/common.css"><script src="/sites/store.js"></script><script src="accounts.js"></script><title>Authenticator</title></head><body>
+<header class="site"><span class="brand">Authenticator</span></header>
+<main><div class="card" style="max-width:420px">
+  <h1>Your codes</h1>
+  <p><strong>Acme Accounts (bob)</strong></p><p style="font-size:32px;letter-spacing:6px" id="code"></p>
+  <p class="muted">Codes are valid for this demo session.</p>
+  <a href="/sites/login/2fa.html">Back to sign-in</a>
+</div></main>
+<script>document.getElementById("code").textContent = TOTP.bob;</script>
+</body></html>

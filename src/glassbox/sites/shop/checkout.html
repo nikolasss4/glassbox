@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="/sites/common.css"><script src="/sites/store.js"></script><script src="shop.js"></script><title>Checkout · Brightside</title></head><body>
+<main><div class="card" style="max-width:560px"><h1>Checkout</h1><div id="summary"></div>
+<form id="f"><label for="name">Full name</label><input type="text" id="name">
+<label for="addr">Street address</label><input type="text" id="addr">
+<label for="city">City</label><input type="text" id="city">
+<div style="margin-top:16px"><button type="submit">Place order</button></div><div id="err" class="error" role="alert"></div></form>
+<div id="done" class="hidden"><h2 class="success">Order confirmed</h2><p id="ref"></p></div></div></main>
+<script>
+shopHeader();
+const t = cartTotals();
+document.getElementById("summary").innerHTML = cart().map((l) => l.qty + " × " + product(l.id).name).join("<br>") + "<p><strong>Total: " + money(t.total) + "</strong></p>";
+document.getElementById("f").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const v = (id) => document.getElementById(id).value.trim();
+  if (!cart().length) { document.getElementById("err").textContent = "Your cart is empty."; return; }
+  if (!v("name") || !v("addr") || !v("city")) { document.getElementById("err").textContent = "Please fill in name, address and city."; return; }
+  const orders = gbStore.get("shop:orders", []);
+  orders.push({ items: cart(), coupon: t.code, total: t.total, name: v("name"), address: v("addr"), city: v("city") });
+  gbStore.set("shop:orders", orders);
+  saveCart([]); gbStore.set("shop:coupon", null);
+  document.getElementById("f").classList.add("hidden");
+  document.getElementById("done").classList.remove("hidden");
+  document.getElementById("ref").textContent = "Order #BR-" + (1000 + orders.length) + " for " + money(t.total);
+});
+</script></body></html>
