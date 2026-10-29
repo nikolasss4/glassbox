@@ -26,7 +26,7 @@ export function RunView({ runId }: { runId: string }) {
     <div className="flex h-full min-w-0">
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="flex items-start justify-between gap-6 border-b border-zinc-800/80 px-6 py-4">
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
               <StatusPill status={status} run={trace} />
               <span className="font-mono text-xs text-zinc-500">{trace.provider}</span>
