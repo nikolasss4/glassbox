@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useRun } from '../lib/useRun'
 import { fmtCost, fmtSecs } from '../lib/format'
+import { Controls, ResumeBar } from './Controls'
+import { TakeoverLayer } from './TakeoverLayer'
 import { Timeline } from './Timeline'
 import { StatusPill } from './ui'
 import { Viewport } from './Viewport'
 
 export function RunView({ runId }: { runId: string }) {
-  const { trace, frame, status, error, live } = useRun(runId)
+  const { trace, frame, status, error, live, send } = useRun(runId)
   const [selected, setSelected] = useState<number | null>(null)
 
   if (error) return <div className="p-10 text-rose-300">Could not load run: {error}</div>
@@ -14,7 +16,9 @@ export function RunView({ runId }: { runId: string }) {
 
   // While live and nothing is selected, show the stream; otherwise the selected step.
   const shown = selected !== null ? trace.steps.find((s) => s.index === selected) : trace.steps.at(-1)
-  const showLive = live && selected === null
+  const paused = status === 'paused'
+  // Taking over always shows the live page, whatever step was selected.
+  const showLive = live && (selected === null || paused)
   const totalCost = trace.steps.reduce((a, s) => a + (s.cost_usd ?? 0), 0)
 
   return (
@@ -34,18 +38,26 @@ export function RunView({ runId }: { runId: string }) {
               </p>
             )}
           </div>
-          <dl className="flex shrink-0 gap-6 text-right">
+          <div className="flex shrink-0 items-start gap-6">
+          <Controls status={status} send={send} />
+          <dl className="flex gap-6 text-right">
             <Stat label="steps" value={String(trace.steps.length)} />
             <Stat label="cost" value={fmtCost(totalCost)} />
             {trace.result && <Stat label="time" value={fmtSecs(trace.result.duration_s)} />}
           </dl>
+          </div>
         </header>
         <div className="min-h-0 flex-1 overflow-y-auto p-6">
-          <Viewport
-            frame={showLive ? frame : null}
-            imageUrl={shown?.screenshot_url}
-            url={showLive ? shown?.url ?? trace.start_url ?? '' : shown?.url}
-          />
+          <div className={`rounded-xl transition ${paused ? 'ring-2 ring-amber-400/70 ring-offset-4 ring-offset-zinc-950' : ''}`}>
+            <Viewport
+              frame={showLive ? frame : null}
+              imageUrl={shown?.screenshot_url}
+              url={showLive ? shown?.url ?? trace.start_url ?? '' : shown?.url}
+            >
+              {paused && <TakeoverLayer frame={frame} send={send} />}
+            </Viewport>
+          </div>
+          {paused && <ResumeBar send={send} />}
         </div>
       </div>
       <Timeline
