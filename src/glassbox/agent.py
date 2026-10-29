@@ -22,6 +22,7 @@ class Step(BaseModel):
     index: int
     url: str
     observation_digest: str
+    feedback: str | None = None  # what the model was told about the previous action
     thought: str
     action: Action
     result: ActionResult
@@ -62,6 +63,7 @@ class RunControl:
         self._running = asyncio.Event()
         self._running.set()
         self.cancelled = False
+        self.takeovers = 0  # bumps on every pause, so the loop can spot one that came and went
         self._pending_note: str | None = None
 
     @property
@@ -69,6 +71,8 @@ class RunControl:
         return not self._running.is_set()
 
     def pause(self) -> None:
+        if not self.paused:
+            self.takeovers += 1
         self._running.clear()
 
     def resume(self, note: str | None = None) -> None:
@@ -140,6 +144,7 @@ class Agent:
             if self.control.cancelled:
                 return RunResult(stop_reason="cancelled")
 
+            takeovers_before = self.control.takeovers
             obs = await self.browser.observe(screenshot=self.config.vision)
             try:
                 decision = await asyncio.wait_for(
@@ -150,7 +155,7 @@ class Agent:
 
             human_note = None
             t0 = time.monotonic()
-            if self.control.paused or self.control.cancelled:
+            if self.control.takeovers != takeovers_before or self.control.cancelled:
                 # The human grabbed control while the model was thinking. Don't act on a
                 # decision made for a page the human has since changed.
                 await self.control.wait_if_paused()
@@ -162,7 +167,9 @@ class Agent:
                 )
             else:
                 result = await self.browser.execute(decision.action)
-            await self._record(index, obs, decision, result, time.monotonic() - t0, human_note)
+            await self._record(
+                index, obs, feedback, decision, result, time.monotonic() - t0, human_note
+            )
 
             if self.control.cancelled:
                 return RunResult(stop_reason="cancelled")
@@ -186,6 +193,7 @@ class Agent:
         self,
         index: int,
         obs: Observation,
+        feedback: str | None,
         decision: Decision,
         result: ActionResult,
         action_s: float,
@@ -196,6 +204,7 @@ class Agent:
             index=index,
             url=obs.url,
             observation_digest=obs.digest,
+            feedback=feedback,
             thought=decision.thought,
             action=decision.action,
             result=result,
