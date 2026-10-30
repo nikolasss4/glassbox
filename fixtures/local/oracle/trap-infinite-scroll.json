@@ -2,7 +2,7 @@
  "task_id": "trap-infinite-scroll",
  "goal": "In the inventory feed, mark item #37 as a favorite.",
  "provider": "oracle",
- "recorded_at": "2026-10-29T19:17:31+00:00",
+ "recorded_at": "2026-10-30T20:05:32+00:00",
  "decisions": [
   {
    "observation_digest": "9279f5fdd85a839c",
@@ -89,7 +89,7 @@
    }
   },
   {
-   "observation_digest": "7f13a5b8c15ec9de",
+   "observation_digest": "826a7ec5346bbf64",
    "decision": {
     "action": {
      "name": "scroll",
@@ -110,7 +110,7 @@
    }
   },
   {
-   "observation_digest": "826a7ec5346bbf64",
+   "observation_digest": "543448753e31c494",
    "decision": {
     "action": {
      "name": "scroll",
@@ -131,7 +131,7 @@
    }
   },
   {
-   "observation_digest": "543448753e31c494",
+   "observation_digest": "9a4747dac7a67dcd",
    "decision": {
     "action": {
      "name": "scroll",
@@ -152,7 +152,7 @@
    }
   },
   {
-   "observation_digest": "543448753e31c494",
+   "observation_digest": "3fefe6ec6d489ed9",
    "decision": {
     "action": {
      "name": "scroll",
@@ -173,7 +173,7 @@
    }
   },
   {
-   "observation_digest": "9a4747dac7a67dcd",
+   "observation_digest": "3fefe6ec6d489ed9",
    "decision": {
     "action": {
      "name": "scroll",

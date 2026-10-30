@@ -16,7 +16,8 @@ ENV UV_COMPILE_BYTECODE=1 \
 
 COPY pyproject.toml uv.lock README.md ./
 RUN uv sync --locked --no-dev --no-install-project
-RUN uv run --no-dev playwright install --with-deps chromium
+# Call the venv binary directly: `uv run` would try to build the project before src/ exists.
+RUN /app/.venv/bin/playwright install --with-deps chromium
 
 COPY src ./src
 RUN uv sync --locked --no-dev
@@ -24,4 +25,4 @@ COPY --from=ui /ui/dist ./frontend/dist
 
 ENV GLASSBOX_FRONTEND_DIST=/app/frontend/dist
 EXPOSE 8000
-CMD ["uv", "run", "--no-dev", "glassbox", "serve", "--host", "0.0.0.0", "--port", "8000", "--runs-dir", "/data/runs"]
+CMD ["/app/.venv/bin/glassbox", "serve", "--host", "0.0.0.0", "--port", "8000", "--runs-dir", "/data/runs"]
